@@ -5,14 +5,14 @@ import dash
 from dash import dcc, html, dash_table
 from dash.dependencies import Input, Output
 
-
 # Extract data frame
 df = pd.read_csv("../data/COVID_data.csv")
 df_by_country = df.groupby('countriesAndTerritories', as_index=False)[['deaths', 'cases']].sum()
 
+
 # Create dash application
 app = dash.Dash(__name__, assets_folder="../assets")
-#server = app.server
+
 
 # Define application layout
 app.layout = html.Div([
