@@ -4,9 +4,15 @@ import plotly.express as px
 import dash
 from dash import dcc, html, dash_table
 from dash.dependencies import Input, Output
+import os
+
 
 # Extract data frame
-df = pd.read_csv("../data/COVID_data.csv")
+main_directory = os.getcwd()
+# main_directory.removesuffix("/src")
+if "src" in main_directory:
+    main_directory = main_directory[:-4]
+df = pd.read_csv(f"{main_directory}/data/COVID_data.csv")
 df_by_country = df.groupby('countriesAndTerritories', as_index=False)[['deaths', 'cases']].sum()
 
 

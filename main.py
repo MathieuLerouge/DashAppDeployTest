@@ -1,4 +1,4 @@
 from src.application import app
 
 if __name__ == '__main__':
-    print("Ok")
+    app.run_server(debug=True)
