@@ -1,5 +1,4 @@
-from src.application import app
+from src.application import *
 
 if __name__ == '__main__':
-    string = "blabla"
     app.run_server(debug=True)
