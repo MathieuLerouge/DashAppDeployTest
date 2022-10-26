@@ -18,7 +18,7 @@ df_by_country = df.groupby('countriesAndTerritories', as_index=False)[['deaths',
 
 # Create dash application
 app = dash.Dash(__name__, assets_folder="../assets")
-
+server = app.server
 
 # Define application layout
 app.layout = html.Div([
